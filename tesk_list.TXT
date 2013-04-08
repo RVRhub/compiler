@@ -2,4 +2,4 @@
 2. ??????????
 3.http://ru.wikipedia.org/wiki/Java_Database_Connectivity
 4.http://ru.wikipedia.org/wiki/Data_Access_Object
-12345
+5. Коллекции
