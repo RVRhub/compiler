@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 1. ????????
 2. ??????????
 3.http://ru.wikipedia.org/wiki/Java_Database_Connectivity
 4.http://ru.wikipedia.org/wiki/Data_Access_Object
 5. Коллекции
+=======
+﻿1. коллекции
+2. исключения
+3.http://ru.wikipedia.org/wiki/Java_Database_Connectivity
+4.http://ru.wikipedia.org/wiki/Data_Access_Object
+
+http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81158&SecID=GURU_SECTION_80703
