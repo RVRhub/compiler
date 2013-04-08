@@ -1,4 +1,6 @@
-1. ????????
-2. ??????????
+﻿1. коллекции
+2. исключения
 3.http://ru.wikipedia.org/wiki/Java_Database_Connectivity
 4.http://ru.wikipedia.org/wiki/Data_Access_Object
+
+http://www.oracle.com/technetwork/java/dataaccessobject-138824.html
