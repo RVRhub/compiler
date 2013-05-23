@@ -33,9 +33,9 @@ public class OracleAccountDAO implements AccountDAO, ErrorConstants {
                 acc.setLname(rs.getString(3));
                 acc.setEmail(rs.getString(4));
                 acc.setPass(rs.getString(5));
-                //    acc.setBirth(rs.getDate(devil));
+                //    acc.setBirth(rs.getDate(6));
                 //    acc.setWorkplace(rs.getString(7));
-                //    acc.setCity(rs.getString(music));
+                //    acc.setCity(rs.getString(8));
                 //    acc.setState(rs.getString(9));
                 //    acc.setCountry(rs.getString(10));
                 //    acc.setKnowproglang(rs.getString(11));
@@ -53,8 +53,6 @@ public class OracleAccountDAO implements AccountDAO, ErrorConstants {
         return users;
     }
 
-
-
     public void insertUser(GenericAccountInfo users) {
         PreparedStatement stmt = null;
         Connection conn = null;
@@ -62,11 +60,11 @@ public class OracleAccountDAO implements AccountDAO, ErrorConstants {
         try {
             conn = DBUtils.getConnection();
             stmt = conn.prepareStatement("INSERT ALL "
-                    + "INTO GenericAccountInfo (user_id, fname, lname, email, pass)"
-                    + "VALUES (userid_seq.nextval,?,?,?,?)"
-                    + "INTO FullAccountInfo (user_id, birthday, workplace, city, state, knowproglang, country)"
-                    + "VALUES (userid_seq.currval,?,?,?,?,?,?)"
-                    + "SELECT * FROM dual");
+                    +"INTO GenericAccountInfo (user_id, fname, lname, email, pass)"
+                    +"VALUES (userid_seq.nextval,?,?,?,?)"
+                    +"INTO FullAccountInfo (user_id, birthday, workplace, city, state, knowproglang, country)"
+                    +"VALUES (userid_seq.currval,?,?,?,?,?,?)"
+                    +"SELECT * FROM dual");
             try {
                 if (isGenericParams(users)) {
                     stmt.setString(1, users.getFname());
@@ -92,6 +90,8 @@ public class OracleAccountDAO implements AccountDAO, ErrorConstants {
 
         }
     }
+
+
 
     public boolean deleteUser(GenericAccountInfo users) {
         PreparedStatement stmt = null;
