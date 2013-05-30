@@ -13,6 +13,5 @@ public interface DirectionDAO {
 
     public void updateDir(Direction dir);
 
-    public void updateTypeDir(Direction dir);
 
 }

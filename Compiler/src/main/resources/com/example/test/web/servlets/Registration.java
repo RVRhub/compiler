@@ -1,6 +1,7 @@
 package com.example.test.web.servlets;
 
-import com.example.test.dao.impl.OracleAccountDAO;
+
+import com.example.test.dao.hibernate.OracleAccountHibernateDAO;
 import com.example.test.entity.GenericAccountInfo;
 
 import javax.servlet.ServletException;
@@ -28,7 +29,7 @@ public class Registration extends HttpServlet {
             a.setEmail(email);
             a.setPass(password);
 
-            new OracleAccountDAO().insertUser(a);
+            new OracleAccountHibernateDAO().insertUser(a);
             getServletContext().getRequestDispatcher("/RegistrationOK!.jsp").forward(request, response);
 
         }catch(Exception e){

@@ -14,6 +14,5 @@ public interface ProjectDAO {
 
     public void updateGenericProjectInfo(GenericProjectInfo projects);
 
-    public void updateProjectDetails (GenericProjectInfo projects);
 
 }

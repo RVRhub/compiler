@@ -12,13 +12,9 @@ public interface AccountDAO {
 
     public boolean deleteUser(GenericAccountInfo users);
 
-    public GenericAccountInfo getUserById(int user_id);
+    public GenericAccountInfo getUserById(Long id);
 
     public void updateGenericAccountInfo(GenericAccountInfo users);
-
-    public void updateFullAccountInfo (GenericAccountInfo users);
-
-
 
 }
 

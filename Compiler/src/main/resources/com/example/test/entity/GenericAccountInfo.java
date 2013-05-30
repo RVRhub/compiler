@@ -1,14 +1,22 @@
 package com.example.test.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "GenericAccountInfo")
 public class GenericAccountInfo {
 
+
     @Id
-    @Column(name = "dir_id")
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+
+    @Column(name = "user_id")
     private int user_id;
 
     @Column(name = "fname")

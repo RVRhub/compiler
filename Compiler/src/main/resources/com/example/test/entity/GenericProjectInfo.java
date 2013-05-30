@@ -1,18 +1,26 @@
 package com.example.test.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 @Table(name = "GenericProjectInfo")
 public class GenericProjectInfo {
 
+
     @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     @Column(name = "project_id")
     private int project_id;
 
-    @Column(name = "user_id")
-    private int user_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private GenericAccountInfo acc;
 
     @Column(name = "projname")
     private String projname;
@@ -33,7 +41,6 @@ public class GenericProjectInfo {
 
     public GenericProjectInfo(int project_id, int user_id, String projname) {
         this.project_id = project_id;
-        this.user_id = user_id;
         this.projname = projname;
     }
 
@@ -79,13 +86,7 @@ public class GenericProjectInfo {
         this.projcategory = projcategory;
     }
 
-    public int getUser_id() {
-        return user_id;
-    }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
 
     public String toString() {
         return project_id + "\t" + projname + "\t"
@@ -93,4 +94,12 @@ public class GenericProjectInfo {
     }
 
 
+//
+//    public int getUser_id() {
+//        return user_id;
+//    }
+//
+//    public void setUser_id(int user_id) {
+//        this.user_id = user_id;
+//    }
 }

@@ -8,13 +8,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 import java.util.Locale;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Roman
- * Date: 29.05.13
- * Time: 0:57
- * To change this template use File | Settings | File Templates.
- */
+
 public class DBUtilsHibernate {
     private static SessionFactory factory;
     private static ServiceRegistry serviceRegistry;
