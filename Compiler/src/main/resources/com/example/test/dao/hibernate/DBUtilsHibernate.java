@@ -5,22 +5,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-<<<<<<< HEAD
 import java.util.Locale;
 
 
-=======
-
-import java.util.Locale;
-
-/**
- * Created with IntelliJ IDEA.
- * User: Roman
- * Date: 29.05.13
- * Time: 0:57
- * To change this template use File | Settings | File Templates.
- */
->>>>>>> 3f450e23d87742140533f1abbea551f835a8e9af
 public class DBUtilsHibernate {
     private static SessionFactory factory;
     private static ServiceRegistry serviceRegistry;

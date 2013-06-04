@@ -45,7 +45,6 @@
           <artifactId>log4j</artifactId>
           <version>1.2.17</version>
       </dependency>
-<<<<<<< HEAD:Compiler/pom.xml
 
       <dependency>
           <groupId>org.primefaces</groupId>
@@ -59,8 +58,6 @@
         </dependency>
 
     </dependencies>
-=======
->>>>>>> 3f450e23d87742140533f1abbea551f835a8e9af:Compiler/pom.xml
 
   <build>
     <finalName>TestMaven</finalName>

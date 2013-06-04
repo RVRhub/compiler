@@ -11,11 +11,7 @@
  		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
 
         <!-- Property for create db-->
-<<<<<<< HEAD
        <!--<property name="hbm2ddl.auto">create</property>-->
-=======
-        <!--property name="hbm2ddl.auto">create</property-->
->>>>>>> 3f450e23d87742140533f1abbea551f835a8e9af
 
         <!-- mapping -->
  		<mapping class="com.example.test.entity.Direction" />
