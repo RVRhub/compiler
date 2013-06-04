@@ -7,6 +7,16 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 import java.util.Locale;
 
+<<<<<<< HEAD
+=======
+/**
+ * Created with IntelliJ IDEA.
+ * User: Roman
+ * Date: 29.05.13
+ * Time: 2:25
+ * Class for create table
+ */
+>>>>>>> 3f450e23d87742140533f1abbea551f835a8e9af
 public class CreateEntyt {
     private static SessionFactory factory;
     private static ServiceRegistry serviceRegistry;
@@ -23,7 +33,11 @@ public class CreateEntyt {
 
             factory = configuration.buildSessionFactory(serviceRegistry);
 
+<<<<<<< HEAD
             System.out.println("Create successes");
+=======
+            System.out.println("Create succsee");
+>>>>>>> 3f450e23d87742140533f1abbea551f835a8e9af
 
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);

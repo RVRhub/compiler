@@ -5,7 +5,11 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<<<<<<< HEAD
         <property name="hibernate.connection.password">informator</property>
+=======
+        <property name="hibernate.connection.password">1234</property>
+>>>>>>> 3f450e23d87742140533f1abbea551f835a8e9af
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
         <property name="hibernate.connection.username">system</property>
  		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
