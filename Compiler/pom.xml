@@ -1,10 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>TestMaven</groupId>
-  <artifactId>TestMaven</artifactId>
+  <groupId>Compiler</groupId>
+  <artifactId>Compiler</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
+
+    <properties>
+        <spring.version>3.1.4.RELEASE</spring.version>
+    </properties>
+
+
     <repositories>
         <repository>
             <id>prime-repo</id>
@@ -12,15 +18,56 @@
             <url>http://repository.primefaces.org</url>
             <layout>default</layout>
         </repository>
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
     </repositories>
     <dependencies>
 
 
-      <!--<dependency>-->
-          <!--<groupId>javax.servlet</groupId>-->
-          <!--<artifactId>servlet-api</artifactId>-->
-          <!--<version>2.5</version>-->
-      <!--</dependency>-->
+        <!--JSF-->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+        </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+      </dependency>
 
       <dependency>
         <groupId>javax.servlet.jsp</groupId>
@@ -45,21 +92,29 @@
           <artifactId>log4j</artifactId>
           <version>1.2.17</version>
       </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.2</version>
+        </dependency>
 
-      <dependency>
-          <groupId>org.primefaces</groupId>
-          <artifactId>primefaces</artifactId>
-          <version>3.5</version>
-      </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>6.0</version>
         </dependency>
 
+
+        <!--Hibernate-->
+
+
+
+
+
+
     </dependencies>
 
   <build>
-    <finalName>TestMaven</finalName>
+    <finalName>Compiler</finalName>
   </build>
 </project>

@@ -5,13 +5,13 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="hibernate.connection.password">informator</property>
+        <property name="hibernate.connection.password">1234</property>
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
         <property name="hibernate.connection.username">system</property>
  		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
  		
- 		<mapping class="com.example.test.entity.Direction" />
-        <mapping class="com.example.test.entity.GenericAccountInfo" />
-        <mapping class="com.example.test.entity.GenericProjectInfo" />
+ 		<mapping class="com.compiler.entity.Direction" />
+        <mapping class="com.compiler.entity.GenericAccountInfo" />
+        <mapping class="com.compiler.entity.GenericProjectInfo" />
     </session-factory>
 </hibernate-configuration>

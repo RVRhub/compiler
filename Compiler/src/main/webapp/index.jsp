@@ -9,7 +9,7 @@
 <br><br><br>
 <decor:box color ='yellow' margin ='25' borderWidth = '3' title = 'Login'>
     <div align = center>
-        <form action="/login" method="post">
+        <form action="/Compiler/login" method="post">
 
             <!--Header-->
             <div class="header">

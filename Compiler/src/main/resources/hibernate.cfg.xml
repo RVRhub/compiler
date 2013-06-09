@@ -14,9 +14,9 @@
        <!--<property name="hbm2ddl.auto">create</property>-->
 
         <!-- mapping -->
- 		<mapping class="com.example.test.entity.Direction" />
-        <mapping class="com.example.test.entity.GenericAccountInfo" />
-        <mapping class="com.example.test.entity.GenericProjectInfo" />
+ 		<mapping class="com.compiler.entity.Direction" />
+        <mapping class="com.compiler.entity.GenericAccountInfo" />
+        <mapping class="com.compiler.entity.GenericProjectInfo" />
 
     </session-factory>
 </hibernate-configuration>
