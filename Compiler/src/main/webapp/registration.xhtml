@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+           <link rel="stylesheet" type="text/css" href="../style/main.css"/>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p:panel header="Registration form">
+            <h:messages errorClass="errorMessage" infoClass="infoMessage" warnClass="warnMessage"></h:messages>
+            <h:panelGrid columns="2" cellpadding="5">
+
+                <h:outputText value="FirstName: "/>
+                <p:inputText id="firstname" value="#{RegistrationBean.firstname}"
+                             required="true" requiredMessage="Please enter your First Name"/>
+
+
+                <h:outputText value="LastName: "/>
+                <p:inputText id="lastname" value="#{RegistrationBean.lastname}"
+                             required="true" requiredMessage="Please enter your Last Name"/>
+
+
+                <h:outputText value="Email: " />
+                <p:inputText id="email" value="#{RegistrationBean.email}"
+                             required="true" requiredMessage="Please enter your Email"/>
+
+                <h:outputText value="Password: " />
+                <p:password id="password" value="#{RegistrationBean.password}" feedback="true"
+                        required="true" requiredMessage="Please enter your Password"/>
+
+
+                <h:outputText value="Workplace: "/>
+                <p:inputText id="wplace" value="#{RegistrationBean.wplace}"
+                             required="true" requiredMessage="Please enter your Workplace"/>
+
+
+                <h:outputText value="City: "/>
+                <p:inputText id="city" value="#{RegistrationBean.city}"
+                             required="true" requiredMessage="Please enter your City"/>
+
+                <h:outputText value="State: "/>
+                <p:inputText id="state" value="#{RegistrationBean.state}"
+                             required="true" requiredMessage="Please enter your State"/>
+
+                <h:outputText value="Country: "/>
+                <p:inputText id="country" value="#{RegistrationBean.country}"
+                             required="true" requiredMessage="Please enter your Country"/>
+
+                <p:calendar value="#{RegistrationBean.dob}" id="popupCal" />
+                <p:dialog widgetVar="dialog"
+                          showEffect="fade" hideEffect="fade">
+
+
+                        <h:outputText value="Popup Date:" />
+                        <h:outputText value="#{RegistrationBean.dob}" id="popupDate">
+                            <f:convertDateTime pattern="d/M/yyyy"/>
+                        </h:outputText>
+
+                </p:dialog>
+
+
+                <p:commandButton type="submit" value="Submit" action="#{RegistrationBean.register}"/>
+                <p:commandButton type="reset" value="Reset"/>
+
+            </h:panelGrid>
+          </p:panel>
+        </h:form>
+    </h:body>
+</html>

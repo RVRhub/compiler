@@ -55,6 +55,7 @@ public class LoginBean implements Serializable {
         FacesMessage msg = null;
         boolean loggedIn = false;
 
+
         if(username != null && password != null) {
             log.info("[login] username" + username);
             loggedIn = authenticationAction();
@@ -87,6 +88,8 @@ public class LoginBean implements Serializable {
 
         return  result.isAuthenticated();
     }
+
+
 
 
 }

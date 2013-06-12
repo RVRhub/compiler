@@ -7,8 +7,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,6 +16,7 @@ import java.util.List;
 
 public class OracleAccountHibernateDAO implements AccountDAO {
     private static SessionFactory factory;
+    private static Logger log = Logger.getLogger(OracleAccountHibernateDAO.class);
 
     public OracleAccountHibernateDAO()
     {
@@ -43,7 +44,7 @@ public class OracleAccountHibernateDAO implements AccountDAO {
     }
 
     public GenericAccountInfo getUser(String login) {
-
+        log.info("GetUser " + login);
         Session session = factory.openSession();
         Transaction tx = null;
         List<GenericAccountInfo> accountsInfo = new ArrayList<GenericAccountInfo>();
@@ -58,11 +59,13 @@ public class OracleAccountHibernateDAO implements AccountDAO {
         } finally {
             session.close();
         }
+        log.info("GetUser " + accountsInfo.get(0)  );
         return accountsInfo != null ? accountsInfo.get(0) : null;
     }
 
     @Override
     public void insertUser(GenericAccountInfo users) {
+        log.info("insertUser " + users);
         Session session = factory.openSession();
         Transaction tx = null;
         try {
@@ -76,6 +79,7 @@ public class OracleAccountHibernateDAO implements AccountDAO {
         } finally {
             session.close();
         }
+        log.info("insertUser end" );
     }
 
     @Override
