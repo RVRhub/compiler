@@ -2,13 +2,11 @@ package com.compiler.dao.hibernate;
 
 import com.compiler.dao.AccountDAO;
 import com.compiler.entity.GenericAccountInfo;
-import com.compiler.utils.LoggerUtils;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -58,7 +56,7 @@ public class OracleAccountHibernateDAO implements AccountDAO {
         } finally {
             session.close();
         }
-        return accountsInfo != null ? accountsInfo.get(0) : null;
+        return accountsInfo.isEmpty() ? null : accountsInfo.get(0);
     }
 
     @Override
