@@ -18,9 +18,11 @@
 
             <f:facet name="footer">
                 <p:commandButton id="loginButton" value="Login" update="growl"
-                                 actionListener="#{loginBean.login}"
-                                 oncomplete="handleLoginRequest(xhr, status, args)"
-                                 action="#{loginBean.forward}"/>
+
+
+
+                                 action="#{loginBean.forward}"
+                        />
             </f:facet>
         </h:panelGrid>
     </h:form>

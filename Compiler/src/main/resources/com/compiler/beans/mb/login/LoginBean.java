@@ -4,6 +4,8 @@ package com.compiler.beans.mb.login;
  * User: Roman
  * Date: 09.06.13
  */
+import com.compiler.dao.hibernate.OracleAccountHibernateDAO;
+import com.compiler.entity.GenericAccountInfo;
 import com.compiler.security.authentication.SampleAuthenticationManager;
 import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
@@ -15,6 +17,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.application.*;
 
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,7 +27,6 @@ import java.io.Serializable;
 @ManagedBean(name="loginBean")
 @RequestScoped
 public class LoginBean implements Serializable {
-
     private static Logger log = Logger.getLogger(LoginBean.class);
 
     private static AuthenticationManager authenticationManager = new SampleAuthenticationManager();
@@ -32,6 +34,8 @@ public class LoginBean implements Serializable {
     private String username;
 
     private String password;
+
+    private Boolean loggedIn = false;
 
     public String getUsername() {
         return username;
@@ -49,41 +53,50 @@ public class LoginBean implements Serializable {
         this.password = password;
     }
 
-    public void login(ActionEvent actionEvent) {
-        log.info("[login] start");
+    public void login() {
         RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage msg = null;
-        boolean loggedIn = false;
+        GenericAccountInfo user = null;
 
-        if(username != null && password != null) {
-            log.info("[login] username" + username);
+        if(username != null && password != null)
+            user = new OracleAccountHibernateDAO().getUser(username);
+
+        if(user != null)
+        if(user.getPass().equals(password))
             loggedIn = authenticationAction();
+
+        if ( loggedIn == true )
+        {
+            log.info("[login] username" + username);
             msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
+
         } else {
             log.info("[login] Not username!!!");
-            loggedIn = authenticationAction();
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Invalid credentials");
         }
 
         FacesContext.getCurrentInstance().addMessage(null, msg);
         context.addCallbackParam("loggedIn", loggedIn);
 
-        log.info("[login] finish");
-
-      //  return true;
     }
 
-    public String forward()
+    public String forward ( )
     {
-
-        return true ? "/pages/secure/account.xhtml" :"";
+        login();
+        return loggedIn ? "/pages/secure/account.xhtml" :"/Compiler/login.xhtml";
     }
 
     private Boolean authenticationAction()
     {
-        Authentication request = new UsernamePasswordAuthenticationToken(username, password);
-        Authentication result = authenticationManager.authenticate(request);
-        SecurityContextHolder.getContext().setAuthentication(result);
+        Authentication result = null;
+        try {
+            Authentication request = new UsernamePasswordAuthenticationToken(username, password);
+            result = authenticationManager.authenticate(request);
+            SecurityContextHolder.getContext().setAuthentication(result);
+        }catch (BadCredentialsException e)
+        {
+            result = null;
+        }
 
         return  result.isAuthenticated();
     }

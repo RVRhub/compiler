@@ -2,7 +2,6 @@ package com.compiler.security.authentication;
 
 import com.compiler.dao.hibernate.OracleAccountHibernateDAO;
 import com.compiler.entity.GenericAccountInfo;
-import org.apache.log4j.Logger;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,26 +20,24 @@ import java.util.List;
  * Date: 08.06.13
  */
 public class SampleAuthenticationManager implements AuthenticationManager {
-    private static Logger log = Logger.getLogger(SampleAuthenticationManager.class);
 
     //TODO for MD5
     private Md5PasswordEncoder passwordEncoder = new Md5PasswordEncoder();
 
     public Authentication authenticate(Authentication auth) throws AuthenticationException {
 
-        log.info("[authenticate] start");
 
-        GenericAccountInfo user = new OracleAccountHibernateDAO().getUser(auth.getName());
+//        GenericAccountInfo user = new OracleAccountHibernateDAO().getUser(auth.getName());
+//
+//        log.info("[authenticate] user: " + user);
+//
+//        if(user == null)
+//            throw new BadCredentialsException("User does not exists");
+//
+//        if(!user.getPass().equals(auth.getCredentials()))
+//            throw new BadCredentialsException("Wrong password!");
 
-        log.info("[authenticate] user: " + user);
-
-        if(user == null)
-            throw new BadCredentialsException("User does not exists");
-
-        if(!user.getPass().equals(auth.getCredentials()))
-            throw new BadCredentialsException("Wrong password!");
-
-        log.info("[authenticate] user success: " + user);
+//        log.info("[authenticate] user success: " + user);
 
         return new UsernamePasswordAuthenticationToken(
                 auth.getName(),
