@@ -1,4 +1,4 @@
-﻿0. git 
+﻿0. git RVRhub 
 1. коллекции
 2. исключения
 3.http://ru.wikipedia.org/wiki/Java_Database_Connectivity
