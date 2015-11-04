@@ -5,3 +5,4 @@
 4.http://ru.wikipedia.org/wiki/Data_Access_Object
 5.http://javagu.ru/portal/dt?last=false&provider=javaguru&ArticleId=GURU_ARTICLE_81158&SecID=GURU_SECTION_80703
 6. git RVR90
+7. test
